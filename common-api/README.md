@@ -1,8 +1,8 @@
 README
 ===========================
-几个子项目共用的接口和类。
+几个子模块共用的接口和类。
 
-提供一个接口，供sample-service和feign-client两个项目共用。
+提供一个接口，供sample-service和feign-client两个模块共用。
 
 ## 依赖此项目的项目
 |名称 | 用途 |
