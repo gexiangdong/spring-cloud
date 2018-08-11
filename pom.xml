@@ -51,9 +51,15 @@
                 <version>Finchley.SR1</version>
                 <type>pom</type>
                 <scope>import</scope>
-                </dependency>
-        </dependencies>
-    </dependencyManagement>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.devmgr.springcloud</groupId>
+                <artifactId>common-api</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+         </dependencies>
+   </dependencyManagement>
 
 
 

@@ -7,5 +7,4 @@ import cn.devmgr.springcloud.common.TvSeriesController;
 @FeignClient("sample-service")
 public interface ClientController extends TvSeriesController {
 
-	
 }

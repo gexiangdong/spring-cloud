@@ -1,4 +1,4 @@
-package cn.devmgr.tutorial;
+package cn.devmgr.springcloud;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
