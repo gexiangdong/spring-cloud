@@ -14,9 +14,11 @@ README
 这个JSON中的key1的值是调用sample-service中返回的 
 
 
-# 问题
+# 示例中的问题
 此例中调用方（feign-client）和服务提供方(sample-service)共用了一个接口(shared)里的SampleController。
 这样做造成了两个项目之间的紧耦合，这非常糟糕。
 
-也可以在feign-client里单独写一个和SampleController方法名、参数、RequestMapping同样的接口（可以只写自己需要的部分），然后调用，效果一样的，这样耦合度会降低些，但因为多了些代码，增加了麻烦。
+较好一点的做法是，在feign-client里单独写一个和SampleController方法名、参数、RequestMapping同样的接口（可以只写自己需要的部分），然后用这个接口当ClientController中继承的那个，效果一样的，这样会降低耦合度。但多了些代码，综合考虑是值得的。
+
+
 
