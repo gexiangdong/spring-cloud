@@ -1,0 +1,21 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/ # 服务注册中心地址
+  server:
+    enableSelfPreservation: false
+  instance:
+    preferIpAddress: true
+
+
+logging:
+  level:
+    cn.devmgr: TRACE
+    org.springframework: WARN
+  
+ 

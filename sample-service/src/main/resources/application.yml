@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd 
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true  #使用数值timestamp表示日期，true时会忽略date-format
+  application:
+    name: sample-service # 服务名称
+
+logging:
+  file: target/app.log
+  level:
+    ROOT: WARN
+    cn.devmgr: TRACE
+    cn.devmgr.springcloud.springboot.dao: WARN
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    preferIpAddress: true
+
