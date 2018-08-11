@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>common-api</artifactId>
+	<artifactId>shared</artifactId>
 	<packaging>jar</packaging>
 
-	<name>common APIs for most subprojects</name>
-	<description>多个子项目共用的api</description>
+	<name>shared classes and interfaces for most subprojects</name>
+	<description>多个子项目共用的类和接口</description>
 
 	<parent>
         <groupId>cn.devmgr.springcloud</groupId>

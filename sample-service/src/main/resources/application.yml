@@ -24,3 +24,18 @@ eureka:
   instance:
     preferIpAddress: true
 
+
+management:
+  endpoint:
+    info:
+      enabled: true
+    beans:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+      

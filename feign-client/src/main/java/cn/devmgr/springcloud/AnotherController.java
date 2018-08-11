@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.devmgr.springcloud.common.TvSeriesController;
+import cn.devmgr.springcloud.shared.SampleController;
+
 
 @RestController
-@RequestMapping("/sample")
-public class SampleController {
-    @Autowired TvSeriesController clientController;
+@RequestMapping("/")
+public class AnotherController {
+    @Autowired SampleController clientController;
     
     @GetMapping
     public Map<String, Object> getAll(){

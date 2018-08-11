@@ -17,10 +17,9 @@
     </parent>
 
 	<dependencies>
-
         <dependency>
             <groupId>cn.devmgr.springcloud</groupId>
-            <artifactId>common-api</artifactId>
+            <artifactId>shared</artifactId>
         </dependency>
 
         <dependency>

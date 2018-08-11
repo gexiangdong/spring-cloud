@@ -12,7 +12,7 @@
 	<description>Spring Cloud的例子</description>
 
     <modules>
-        <module>common-api</module>
+        <module>shared</module>
         <module>register-eureka</module>
         <module>sample-service</module>
         <module>feign-client</module>
@@ -55,7 +55,7 @@
 
             <dependency>
                 <groupId>cn.devmgr.springcloud</groupId>
-                <artifactId>common-api</artifactId>
+                <artifactId>shared</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
          </dependencies>

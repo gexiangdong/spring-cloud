@@ -17,7 +17,6 @@
 	</parent>
 
 	<dependencies>
-
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -25,9 +24,19 @@
 
         <dependency>
             <groupId>cn.devmgr.springcloud</groupId>
-            <artifactId>common-api</artifactId>
+            <artifactId>shared</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 	</dependencies>
 
 	<build>

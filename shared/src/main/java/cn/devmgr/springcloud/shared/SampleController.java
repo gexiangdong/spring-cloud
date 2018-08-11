@@ -1,4 +1,4 @@
-package cn.devmgr.springcloud.common;
+package cn.devmgr.springcloud.shared;
 
 import java.util.Map;
 
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RequestMapping("/tvseries")
-public interface TvSeriesController {
+public interface SampleController {
     
     @GetMapping
     public Map<String, Object> getAll();
