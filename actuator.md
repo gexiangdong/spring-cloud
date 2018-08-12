@@ -27,4 +27,4 @@ management:
       exposure:
         include: "*"
 ```
-之后就可以通过http://localhost:port/actuator/来查了，查看的结果都是JSON格式的数据，不直观，可以结合[Spring Boot Admin](./admin-server)以图形化的界面来查看，而且可以同时监控多个微服务。
+之后就可以通过 http://localhost:port/actuator/ 来查看运行状态了，查看到的结果是JSON格式的数据，不够直观，可结合[Spring Boot Admin](./admin-server)以图形化的界面来查看，而且可以同时监控多个微服务。
