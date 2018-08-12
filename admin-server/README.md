@@ -12,7 +12,25 @@ Spring Boot Admin
 不论哪种方法，如果有spring-security，需要注意对应的端点是否有权访问。
 
 ## 创建Spring Boot Admin Server
-参照这个例子吧
+pom中至少需要这2个依赖：
+
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+	<groupId>de.codecentric</groupId>
+	<artifactId>spring-boot-admin-starter-server</artifactId>
+	<version>2.0.2</version>
+</dependency>
+```
+启动类里需要两个注解：
+
+```java
+@EnableAutoConfiguration
+@EnableAdminServer
+```
 
 ## 手工添加步骤
 以下操作需要**在被监控的微服务**上进行

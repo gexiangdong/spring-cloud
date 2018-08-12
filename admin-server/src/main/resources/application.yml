@@ -19,5 +19,5 @@ spring:
 logging:
   file: target/app.log
   level:
-    ROOT: WARN
+    ROOT: ERROR
     cn.devmgr: TRACE
