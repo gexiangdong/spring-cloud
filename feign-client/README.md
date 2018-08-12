@@ -17,7 +17,6 @@ README
 ```
 这个JSON中的key1的值是调用sample-service中返回的 
 
-
 ## 说明
 此例中[RemoteSampleController](./src/main/java/cn/devmgr/springcloud/RemoteSampleController.java)是对sample-service模块中[SampleController](../sample-service/src/main/java/cn/devmgr/springcloud/SampleController.java)的描述，需要定义要访问的方法和参数（和服务提供方SampleController.java保持一致）和RequestMapping注解等。
 
@@ -32,10 +31,12 @@ public interface SampleController {
     
 }
 ```
+
 服务提供方实现这个接口，不必再定义RequestMapping注解。调用方（FeignClient一方）直接继承这个接口，这样做虽让可以减少些代码，但这会造成两个服务的紧耦合，紧耦合是我们需要尽力避免的。所以这里没有这样做。 
 
 ## 不用注册中心，使用FeignClient
 如果需要调用外部的RESTful API，外部服务自然不会注册到自己的注册中心中，有时候小点的项目，不用注册中心，也需要调用RESTful API，这些也可以使用FeignClient
+
 ```java
 @FeignClient(url="http://xx.xx.xx.xx/")
 ```
