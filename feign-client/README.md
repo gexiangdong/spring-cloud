@@ -1,6 +1,6 @@
-README
+FeignClient
 =======================
-这个是feignclient的例子。
+这个是feignclient的例子。Feign可以简化对远程HTTP服务调用的方式。
 
 请按如下顺序使用这个例子：
 
@@ -40,3 +40,35 @@ public interface SampleController {
 ```java
 @FeignClient(url="http://xx.xx.xx.xx/")
 ```
+## 使用FeignClient的步骤
+pom中加入依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+```
+pom中别忘记在depencyManagement部分引入spring-cloud-dependecies
+
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>Finchley.SR1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+     </dependencies>
+</dependencyManagement>
+```
+在启动类里面增加注解
+
+```java
+@EnableFeignClients
+```
+
+之后就可使用@FeignClient注解了。
