@@ -10,13 +10,32 @@ README
 4. 可以通过浏览器访问 http://localhost:8081/ 来测试
 
 测试到的结果：
-{"key1":"this is from SampleControllerImpl of sample-service","kkk":"这个是在feignclient-sample里添加的"}
+
+```json
+{"key1":"data from SampleController of sample-service",
+"kkk":"这个是在feignclient-sample里添加的"}
+```
 这个JSON中的key1的值是调用sample-service中返回的 
 
 
-# 问题
-此例中调用方（feign-client）和服务提供方(sample-service)共用了一个接口(shared)里的SampleController。
-这样做造成了两个项目之间的紧耦合，这非常糟糕。
+## 说明
+此例中[RemoteSampleController](./src/main/java/cn/devmgr/springcloud/RemoteSampleController.java)是对sample-service模块中[SampleController](../sample-service/src/main/java/cn/devmgr/springcloud/SampleController.java)的描述，需要定义要访问的方法和参数（和服务提供方SampleController.java保持一致）和RequestMapping注解等。
 
-也可以在feign-client里单独写一个和SampleController方法名、参数、RequestMapping同样的接口（可以只写自己需要的部分），然后调用，效果一样的，这样耦合度会降低些，但因为多了些代码，增加了麻烦。
+也可以公共出来一个接口，在接口中定义方法、参数和注解，例如：
 
+```java
+@RequestMapping("/ss")
+public interface SampleController {
+    
+    @GetMapping
+    public Map<String, Object> getAll();
+    
+}
+```
+服务提供方实现这个接口，不必再定义RequestMapping注解。调用方（FeignClient一方）直接继承这个接口，这样做虽让可以减少些代码，但这会造成两个服务的紧耦合，紧耦合是我们需要尽力避免的。所以这里没有这样做。 
+
+## 不用注册中心，使用FeignClient
+如果需要调用外部的RESTful API，外部服务自然不会注册到自己的注册中心中，有时候小点的项目，不用注册中心，也需要调用RESTful API，这些也可以使用FeignClient
+```java
+@FeignClient(url="http://xx.xx.xx.xx/")
+```

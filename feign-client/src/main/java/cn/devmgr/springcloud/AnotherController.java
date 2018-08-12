@@ -7,20 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.devmgr.springcloud.shared.SampleController;
 
 
 @RestController
 @RequestMapping("/")
 public class AnotherController {
-    @Autowired SampleController clientController;
+    @Autowired RemoteSampleController client;
     
     @GetMapping
     public Map<String, Object> getAll(){
-        Map<String, Object> map = clientController.getAll();
+        
+        Map<String, Object> map = client.getAll();
         if(!map.containsKey("kkk")) {
             map.put("kkk", "这个是在feignclient-sample里添加的");
         }
+        
+       
         return map;
     }
 
