@@ -72,3 +72,28 @@ pom中别忘记在depencyManagement部分引入spring-cloud-dependecies
 ```
 
 之后就可使用@FeignClient注解了。
+
+## 不使用Feign，使用LoadBalancer + RestTemplate方式访问
+
+```java
+    @Autowired private LoadBalancerClient loadBalancer;
+    @Autowired private RestTemplate restTemplate;
+    
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+ 
+    //
+    public void someMethod(){
+        ServiceInstance instance = loadBalancer.choose("sample-service");
+        if(instance == null){
+            throw new RuntimeException("无法找到sample-service实例，请确认服务是否启动。");
+        }
+        logger.trace("sample-service URI: %s, getMetadata: %s", instance.getUri(), instance.getMetadata());
+        
+        Map<?, ?> map = restTemplate.getForObject(instance.getUri() + "/ss", Map.class);
+        logger.trace("Result from sample-service: %s", map);
+    }
+```
+

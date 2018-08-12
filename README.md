@@ -12,4 +12,5 @@ Spring Cloud 中部分项目的例子
 ### [创建和使用Eureka注册中心](./register-eureka)
 ### [使用Actuator做状态监控](./actuator.md)
 ### [使用FeignClient访问微服务](./feign-client)
+### [使用LoadBalancer + RestTemplate方式访问web服务](./loadbalancer-resttemplate.md)
 ### [使用Spring Boot Admin查看每个微服务状态](./admin-server)
