@@ -30,7 +30,10 @@ pom中增加依赖
 @EnableDiscoveryClient
 ```
 
-## 其他项目在Eureka中登记
+## 其它项目在Eureka中登记
+
+下面的操作**不是**在这个项目（register-eureka)中做，而是在需要在eureka server中登记的微服务项目内做。
+	
 [sample-service](../sample-service)已经实现下面的这些步骤，启动后会自动登记在此项目创建的eureka server。
 
 pom中增加依赖
