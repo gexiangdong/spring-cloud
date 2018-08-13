@@ -9,7 +9,7 @@ Spring Cloud 中部分项目的例子
 * [使用LoadBalancer + RestTemplate方式访问web服务](./loadbalancer-resttemplate.md)
 
 ### 认证和授权服务
-* [Open Auth Server](../oauth2-server)
+* [Open Auth Server](https://github.com/gexiangdong/spring-cloud)
 
 ### 监控和管理
 * [使用Actuator做状态监控](./actuator.md)
