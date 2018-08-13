@@ -70,3 +70,5 @@ pom文件增加一个依赖
 ```
 还需要把自身服务也在注册中心(Eureka）中登记
 
+## 官方文档
+https://codecentric.github.io/spring-boot-admin/current/

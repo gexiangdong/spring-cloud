@@ -1,6 +1,8 @@
 使用LoadBalancer + RestTemplate方式访问web服务
 ====
 
+比较简单，看代码吧：
+
 ```java
     @Autowired private LoadBalancerClient loadBalancer;
     @Autowired private RestTemplate restTemplate;
