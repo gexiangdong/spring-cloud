@@ -34,3 +34,8 @@ management:
 
 
 之后就可以通过 http://localhost:port/actuator/ 来查看运行状态了，查看到的结果是JSON格式的数据，不够直观，可结合[Spring Boot Admin](./admin-server)以图形化的界面来查看，而且可以同时监控多个微服务。
+
+
+## 官方文档
+[https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready)
+
