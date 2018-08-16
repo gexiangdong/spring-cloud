@@ -68,7 +68,7 @@ pom文件增加一个依赖
 ```java
 @EnableDiscoveryClient
 ```
-还需要把自身服务也在注册中心(Eureka）中登记
+最后，别忘记把Spring Boot Admin Server自身也在注册中心(Eureka）中登记，否则它都不知道到那找到Eureka Server，就没法从中发现待监控的微服务了。
 
 ## 官方文档
 https://codecentric.github.io/spring-boot-admin/current/
