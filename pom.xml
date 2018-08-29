@@ -15,6 +15,7 @@
         <module>register-eureka</module>
         <module>sample-service</module>
         <module>feign-client</module>
+        <module>gateway</module>
     </modules>
 
 	<parent>
