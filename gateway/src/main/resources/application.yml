@@ -15,8 +15,8 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: between_route
-        uri: http://xujin.org
+      - id: sample_router # TODO:这里还没开始
+        uri: http://127.0.0.1/sampleservice/
         predicates:
         - name: Between
           args:
