@@ -15,7 +15,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: sample_router # TODO:这里还没开始
+      - id: sample_router # TODO: 这里缺少个例子
         uri: http://127.0.0.1/sampleservice/
         predicates:
         - name: Between
