@@ -24,6 +24,8 @@ Spring Cloud 中部分项目的例子
 |[sample-service](./sample-service) | 8080 |一个RESTful API的例子，feign-client模块使用这个|
 |[feign-client](./feign-client) | 8081 |feignclient的例子，使用FeignClient调用sample-service中的api|
 |[admin-server](./admin-server)| 8070 |Spring Boot Admin, UI界面查看每个微服务的状态, sample-service, feign-client两个服务都有Actuator来提供状态信息 |
+|[gateway](./gateway)| 8888 |TODO: API网关 |
+|[config-server](./config-server)| 8071 |TODO: 配置服务器 |
 
 
 ## 官方文档

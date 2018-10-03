@@ -17,33 +17,33 @@ public class AppTest {
     @Autowired
     private WebTestClient webClient;
 
-	@Test
-	public void contextLoads() {
-	    //别小看这个空测试用例；如果spring-boot配置出现问题，这个空用例很可能执行不通过
-//	       stubFor(get(urlEqualTo("/get"))
-//	                .willReturn(aResponse()
-//	                    .withBody("{\"headers\":{\"Hello\":\"World\"}}")
-//	                    .withHeader("Content-Type", "application/json")));
-//	        stubFor(get(urlEqualTo("/delay/3"))
-//	            .willReturn(aResponse()
-//	                .withBody("no fallback")
-//	                .withFixedDelay(3000)));
+    @Test
+    public void contextLoads() {
+        //别小看这个空测试用例；如果spring-boot配置出现问题，这个空用例很可能执行不通过
+//           stubFor(get(urlEqualTo("/get"))
+//                    .willReturn(aResponse()
+//                        .withBody("{\"headers\":{\"Hello\":\"World\"}}")
+//                        .withHeader("Content-Type", "application/json")));
+//            stubFor(get(urlEqualTo("/delay/3"))
+//                .willReturn(aResponse()
+//                    .withBody("no fallback")
+//                    .withFixedDelay(3000)));
 //
-//	        webClient
-//	            .get().uri("/get")
-//	            .exchange()
-//	            .expectStatus().isOk()
-//	            .expectBody()
-//	            .jsonPath("$.headers.Hello").isEqualTo("World");
+//            webClient
+//                .get().uri("/get")
+//                .exchange()
+//                .expectStatus().isOk()
+//                .expectBody()
+//                .jsonPath("$.headers.Hello").isEqualTo("World");
 //
-//	        webClient
-//	            .get().uri("/delay/3")
-//	            .header("Host", "www.hystrix.com")
-//	            .exchange()
-//	            .expectStatus().isOk()
-//	            .expectBody()
-//	            .consumeWith(
-//	                response -> assertThat(response.getResponseBody()).isEqualTo("fallback".getBytes()));
-	}
+//            webClient
+//                .get().uri("/delay/3")
+//                .header("Host", "www.hystrix.com")
+//                .exchange()
+//                .expectStatus().isOk()
+//                .expectBody()
+//                .consumeWith(
+//                    response -> assertThat(response.getResponseBody()).isEqualTo("fallback".getBytes()));
+    }
 
 }

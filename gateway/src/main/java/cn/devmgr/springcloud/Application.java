@@ -14,10 +14,10 @@ import org.springframework.context.annotation.Bean;
 @EnableEurekaClient
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
-	
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
         String httpUri = uriConfiguration.getHttpbin();

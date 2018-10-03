@@ -13,7 +13,7 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
 @EnableDiscoveryClient
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 }

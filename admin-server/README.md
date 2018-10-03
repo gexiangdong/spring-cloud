@@ -16,13 +16,13 @@ pom中至少需要这2个依赖：
 
 ```xml
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-web</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 <dependency>
-	<groupId>de.codecentric</groupId>
-	<artifactId>spring-boot-admin-starter-server</artifactId>
-	<version>2.0.2</version>
+    <groupId>de.codecentric</groupId>
+    <artifactId>spring-boot-admin-starter-server</artifactId>
+    <version>2.0.2</version>
 </dependency>
 ```
 启动类里需要两个注解：
