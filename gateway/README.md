@@ -4,7 +4,7 @@ API Gateway
 
 
 这个例子有以下功能：
-
+// TODO:
 
 
 ## API网关可以实现以下功能
@@ -71,3 +71,11 @@ API Gateway
 
 ### 缺点
 使用API网关后，增加了系统的复杂度，也会降低性能（速度再快，多加一层，都会延缓响应速度）。要在项目中根据具体情况取舍。
+
+
+
+### 官方文档
+
+Spring Cloud Gateway的文档有详细说明如何配置使用Spring Cloud Gateway，来实现路由和路由过滤器。
+[官方文档请看这里](https://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)
+
