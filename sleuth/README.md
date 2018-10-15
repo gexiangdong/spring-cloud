@@ -1,4 +1,4 @@
-Zipkin Server & Client
+Spring Cloud Sleuth (Zipkin Server & Client)
 ====================
 
 用于跟踪微服务调用。
@@ -24,7 +24,13 @@ QUERY_PORT=9991 java -jar zipkin.jar
 
 ### 使用Elasticssearch
 
-首先要安装elasticserver，安装好后，用下面的命令启动zipkin server（ES_HOSTS值替换成实际的elasticserver server url)。
+首先要安装elasticserver，ubuntu下安装可以使用apt
+
+```bash
+apt install elasticssearch
+```
+
+安装好后，用下面的命令启动zipkin server（ES_HOSTS值替换成实际的elasticserver server url)。
 ```bash
 STORAGE_TYPE=elasticsearch ES_HOSTS=http://localhost:9200 java -jar zipkin.jar
 ```
@@ -32,19 +38,24 @@ STORAGE_TYPE=elasticsearch ES_HOSTS=http://localhost:9200 java -jar zipkin.jar
 
 ## 客户端
 
-需要跟踪的客户端需要修改2点：
+客户端修改不需要修改java代码，也不会对UI等用户交互有直接影响。需要跟踪的客户端需要修改2点：
 
 ### pom
 增加2个依赖：
 ```xml
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
+<dependencies>
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+    
+</dependencies>
 ```
 
 ### application.yml
@@ -61,3 +72,10 @@ spring:
     base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 
 ```
+
+### span & trace
+
+span和trace是spring cloud sleuth中的两个术语。 一个trace是由1到多个span组成的树状结构。
+
+每个请求对应一个trace，请求中对微服务的每次调用都会产生一个新的span。
+
