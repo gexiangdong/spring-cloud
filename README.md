@@ -33,6 +33,8 @@ Spring Cloud 中部分项目的例子
 * [Spring Cloud Gateway](./gateway)
 
 ### 日志聚合
+1. 追踪每个请求的微服务调用链路
+1. 日志聚合
 // TODO:
 
 ----
@@ -44,6 +46,7 @@ Spring Cloud 中部分项目的例子
 |[admin-server](./admin-server)| 8070 |Spring Boot Admin, UI界面查看每个微服务的状态, sample-service, feign-client两个服务都有Actuator来提供状态信息 |
 |[gateway](./gateway)| 8888 |TODO: API网关 |
 |[config-server](./config-server)| 8071 |TODO: 配置服务器 |
+|[zipkin-serwver](./zipkin-server)| 8072 |Zipkin server, 日志和追踪服务UI |
 
 
 ## 官方文档

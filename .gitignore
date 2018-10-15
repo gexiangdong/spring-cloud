@@ -8,3 +8,7 @@ build
 .factorypath
 .springBeans
 
+.idea
+*.iws
+*.iml
+*.ipr

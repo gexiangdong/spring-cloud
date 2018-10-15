@@ -12,6 +12,14 @@ spring:
   devtools:
     livereload:
       port: 35727 # 默认是35729，如果开发环境中运行多个项目都用devtools，这个端口会冲突，需要改成不同的
+  sleuth:      #日志收集客户端
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 
 logging:
   file: target/app.log
