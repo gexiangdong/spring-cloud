@@ -19,6 +19,6 @@ Kibana为Elasticsearch提供UI，负责用户界面。
 
 ## ELK体系结构图
 下图说明了ELK体系的工作原理，Shipper负责从各个微服务处采集日志数据，并发送到Broker，Indexer把Broker中的数据再写入到Elasticsearch，Elasticsearch对数据存储并创建索引。Kibana负责对数据分析并展现给用户。
-<img src="images/elk.png" >
+<img src="../images/elk.png" >
 
 

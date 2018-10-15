@@ -13,4 +13,3 @@ spring.devtools.livereload.port的默认端口是35729，如果开发环境中�
 |admin-server     | 35725 |
 |gateway          | 35724 |
 |config-server    | 35723 |
-|zipkin-server    | 35722 |
