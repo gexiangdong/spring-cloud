@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * 对RestTemplate的配置类。此例中对RestTemplate增加Interceptor，实现比较大的request body进行压缩。
+ * 如果项目中有统一的身份验证；设置request header等，也可在此处统一实现
+ */
 @Configuration
 public class RestClientConfig {
     private final static Logger logger = LoggerFactory.getLogger(RestClientConfig.class);
@@ -30,13 +34,16 @@ public class RestClientConfig {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
 
+        //在现有的interceptor基础上增加一个interceptor，实现压缩功能
+        //如果有统一的身份验证等机制，也可考虑用interceptor实现
         List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
         if (CollectionUtils.isEmpty(interceptors)) {
             interceptors = new ArrayList<>();
         }
         interceptors.add(new RestTemplateCompressInterceptor());
-
         restTemplate.setInterceptors(interceptors);
+
+
         return restTemplate;
     }
 

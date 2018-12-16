@@ -26,13 +26,17 @@ import org.springframework.web.client.RestTemplate;
 public class AnotherController {
     private static final Logger logger = LoggerFactory.getLogger(AnotherController.class);
 
-    @Autowired RemoteSampleController client;
+    @Autowired ClientController client;
     
     @Autowired private LoadBalancerClient loadBalancer;
     
     @Autowired private RestTemplate restTemplate;
 
-    
+
+    /**
+     * 使用FeignClient调用微服务例子
+     * @return
+     */
     @GetMapping
     public Map<String, Object> getAll(){
         logger.trace("使用FeignClient访问微服务sample-service");
@@ -43,6 +47,7 @@ public class AnotherController {
         
         return map;
     }
+
 
     /**
      * 下面是不使用Feign，使用LoadBalancerClient + RestTemplate访问其他服务的例子
@@ -63,6 +68,11 @@ public class AnotherController {
     }
 
 
+    /**
+     * 通过RestTemplate调用其他微服务的例子（POST方法，测试数据量大时自动启动压缩)
+     * @See RestClientConfig
+     * @return
+     */
     @GetMapping("/testpost")
     public Map<?, ?> postCompresssionData(){
         ServiceInstance instance = loadBalancer.choose("sample-service");
