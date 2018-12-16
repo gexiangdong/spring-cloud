@@ -49,4 +49,15 @@ management:
     web:
       exposure:
         include: "*"
-        
+
+#对feignclient的配置
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 1000
+        read-timeout: 5000
+        logger-level: BASIC
+      sample-service:
+        request-interceptors:
+          - cn.devmgr.springcloud.FeignClientInterceptor

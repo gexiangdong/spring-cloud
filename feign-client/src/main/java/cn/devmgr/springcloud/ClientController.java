@@ -19,11 +19,11 @@ import java.util.Map;
  *
  */
 @FeignClient("sample-service")
-@RequestMapping("/ss")
 @Service
 public interface ClientController{
 
-    @GetMapping
+
+    @GetMapping("/ss")
     public Map<String, Object> getAll();
 
 }
