@@ -97,3 +97,21 @@ pom中别忘记在depencyManagement部分引入spring-cloud-dependecies
     }
 ```
 
+## 配置FeignClient
+
+### 通过application.yml配置
+
+```yml
+eign:
+  client:
+    config:
+      default:  #默认的配置
+        connect-timeout: 1000
+        read-timeout: 5000
+        logger-level: BASIC
+      sample-service:  #单独为sample-service微服务指定的配置
+        request-interceptors:  #配置interceptor，可以配置多个
+          - cn.devmgr.springcloud.FeignClientInterceptor
+
+```
+
