@@ -96,6 +96,41 @@ pom中别忘记在depencyManagement部分引入spring-cloud-dependecies
         logger.trace("Result from sample-service: %s", map);
     }
 ```
+### 配置RestTemplate
+
+可以对RestTemplate进行配置，增加全局的base url，设置监视器等等
+
+```java
+@Configuration
+public class RestClientConfig {
+    private final static Logger logger = LoggerFactory.getLogger(RestClientConfig.class);
+
+    /**
+     * 提供一个配置过的RestTemplate。可以增加统一的身份验证、过大的requestBody的压缩等等功能
+     */
+    @Bean
+    public RestTemplate restTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+
+        //获得当前所有interceptor，并增加一个
+        List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
+        if (CollectionUtils.isEmpty(interceptors)) {
+            interceptors = new ArrayList<>();
+        }
+        //增加一个Interceptor
+        interceptors.add(new RestTemplateCompressInterceptor());
+        
+        restTemplate.setInterceptors(interceptors);
+
+        // 增加一个统一的URL前缀；其他地方使用时，可以不写这个前缀了；如果其他地方以http://开头会自动不用这个前缀
+        restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("http://localhost:8080"));
+
+        return restTemplate;
+    }
+}
+```
+
+可以参照[此项目中配置类RestClientConfig.java](./src/main/java/cn/devmgr/springcloud/RestClientConfig.java)
 
 ## 配置FeignClient
 
