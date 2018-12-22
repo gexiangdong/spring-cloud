@@ -48,6 +48,12 @@ public class AnotherController {
         return map;
     }
 
+    @GetMapping("/resttemplate/")
+    public Map<?, ?> useRestTemplateUrlBuilder(){
+        Map<?, ?> map = restTemplate.getForObject("ss", Map.class);
+        logger.trace("useRestTemplateUrlBuilder: Result from sample-service: {}", map);
+        return map;
+    }
 
     /**
      * 下面是不使用Feign，使用LoadBalancerClient + RestTemplate访问其他服务的例子

@@ -10,6 +10,7 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -43,6 +44,7 @@ public class RestClientConfig {
         interceptors.add(new RestTemplateCompressInterceptor());
         restTemplate.setInterceptors(interceptors);
 
+        restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("http://localhost:8080"));
 
         return restTemplate;
     }

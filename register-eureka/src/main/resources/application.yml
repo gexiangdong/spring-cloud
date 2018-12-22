@@ -3,6 +3,8 @@ server:
 
 spring:
   devtools:
+    restart:
+      enabled: false
     livereload:
       port: 35728 # 默认是35729，如果开发环境中运行多个项目都用devtools，这个端口会冲突，需要改成不同的
 
@@ -16,7 +18,6 @@ eureka:
     enableSelfPreservation: false
   instance:
     preferIpAddress: true
-
 
 logging:
   level:
