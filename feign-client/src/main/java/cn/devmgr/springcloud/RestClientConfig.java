@@ -44,6 +44,7 @@ public class RestClientConfig {
         interceptors.add(new RestTemplateCompressInterceptor());
         restTemplate.setInterceptors(interceptors);
 
+        // 增加一个统一的URL前缀；其他地方使用时，可以不写这个前缀了；如果其他地方以http://开头会自动不用这个前缀
         restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("http://localhost:8080"));
 
         return restTemplate;
