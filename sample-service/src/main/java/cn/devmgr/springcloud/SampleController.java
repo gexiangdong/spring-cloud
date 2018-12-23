@@ -1,5 +1,6 @@
 package cn.devmgr.springcloud;
 
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,8 @@ public class SampleController{
         }
         HashMap<String, Object> map = new HashMap<>();
         map.put("key1", "data from SampleController of sample-service");
+        map.put("key2", new Date());
+        map.put("key3", 123456);
         return map;
     }
 
