@@ -80,3 +80,6 @@ API Gateway
 Spring Cloud Gateway的文档有详细说明如何配置使用Spring Cloud Gateway，来实现路由和路由过滤器。
 [官方文档请看这里](https://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)
 
+## 需要注意
+
+Spring Cloud Gateway的项目中不能有spring-boot-starter-data-rest、spring-boot-starter-web等依赖，无法和REST API、SpringMVC等混用。

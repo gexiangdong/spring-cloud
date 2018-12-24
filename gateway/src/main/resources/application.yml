@@ -15,13 +15,10 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: sample_router # TODO: 这里缺少个例子
-        uri: http://127.0.0.1/sampleservice/
+      - id: sample_router # 把path=/ss的请求路由到http://127.0.0.1:8080/ss
+        uri: http://127.0.0.1:8080/ss
         predicates:
-        - name: Between
-          args:
-            datetime1: 2018-03-15T00:02:48.513+08:00[Asia/Shanghai]
-            datetime2: 2018-03-15T02:02:48.516+08:00[Asia/Shanghai]
+        - Path=/ss
 logging:
   file: target/app.log
   level:
