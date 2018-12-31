@@ -18,7 +18,7 @@ FeignClient
 这个JSON中的key1的值是调用sample-service中返回的 
 
 ## 说明
-此例中[RemoteSampleController](./src/main/java/cn/devmgr/springcloud/RemoteSampleController.java)是对sample-service模块中[SampleController](../sample-service/src/main/java/cn/devmgr/springcloud/SampleController.java)的描述，需要定义要访问的方法和参数（和服务提供方SampleController.java保持一致）和RequestMapping注解等。
+此例中[RemoteSampleController](./src/main/java/cn/devmgr/springcloud/ClientController.java.java)是对sample-service模块中[SampleController](../sample-service/src/main/java/cn/devmgr/springcloud/SampleController.java)的描述，需要定义要访问的方法和参数（和服务提供方SampleController.java保持一致）和RequestMapping注解等。
 
 也可以公共出来一个接口，在接口中定义方法、参数和注解，例如：
 
