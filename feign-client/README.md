@@ -137,7 +137,7 @@ public class RestClientConfig {
 ### 通过application.yml配置
 
 ```yml
-eign:
+feign:
   client:
     config:
       default:  #默认的配置
