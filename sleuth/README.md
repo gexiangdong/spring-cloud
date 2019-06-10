@@ -4,7 +4,7 @@ Spring Cloud Sleuth (Zipkin Server & Client)
 用于跟踪微服务调用。
 
 ## 服务端
-spring boot 不再推荐订制Zipkin Server，这里没有使用@EnableZipkinServer注解来编写一个server的代码了。
+spring boot 不再推荐用户定制Zipkin Server，这里没有使用@EnableZipkinServer注解来编写一个server的代码了。
 
 可以下载一个编译好的jar，并运行服务
 ```bash
