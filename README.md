@@ -23,13 +23,14 @@ Spring Cloud 中部分项目的例子
 
 当微服务多起来的时候，每个客户端配置的管理和更新就成了一件麻烦事，这时候可以引入Spring Cloud Config Server做统一的配置管理。
 
-// TODO:
+
 * [服务端 - Spring Cloud Config Server](./config-server/README.md#server)
-* [客户端的配置](./config-server/README.md#client)
+* [客户端的配置](./config-client/README.md)
 
 
 ### API网关
 // TODO: todo
+
 * [Spring Cloud Gateway](./gateway)
 
 ### 访问链路追踪 Spring Cloud Sleuth
@@ -41,14 +42,16 @@ Spring Cloud 中部分项目的例子
  * [服务端](./sleuth)
 
 ----
-模块 | 端口 | 说明 |
+
+| 模块 | 端口 | 说明 |
 |:------------ |:--:|:--------------- |
 |[registger-eureka](./register-eureka) | 8000 |注册中心 |
 |[sample-service](./sample-service) | 8080 |一个RESTful API的例子，feign-client模块使用这个|
 |[feign-client](./feign-client) | 8081 |feignclient的例子，使用FeignClient调用sample-service中的api|
 |[admin-server](./admin-server)| 8070 |Spring Boot Admin, UI界面查看每个微服务的状态, sample-service, feign-client两个服务都有Actuator来提供状态信息 |
 |[gateway](./gateway)| 8888 |TODO: API网关 |
-|[config-server](./config-server)| 8071 |TODO: 配置服务器 |
+|[config-server](./config-server)| 8071 |配置服务器（服务端） |
+|[config-client](./config-client)| 8072 |配置服务器（客户端） |
 |[Sleuth](sleuth)| 9411 |Spring cloud sleuth / Zipkin server, 访问链路追踪 |
 
 

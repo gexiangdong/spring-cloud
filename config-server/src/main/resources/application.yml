@@ -18,8 +18,8 @@ spring:
     config:
       server:
         git:
-          uri: file://web/config-repo
-      uri: http://127.0.0.1:8071
+          uri: https://github.com/gexiangdong/spring-cloud.git # 也可以用文件URL，例如： file://${HOME}/temp/config
+          search-paths: /config-server/config                  # 在上面uri指定的仓库下，配置文件所在目录，可以多个
 
 logging:
   file: target/app.log

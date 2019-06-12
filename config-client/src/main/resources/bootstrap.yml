@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      uri: http://127.0.0.1:8071
+      fail-fast: true         # fail-fast设置为true时，如果读不到config-server会抛异常，无法启动；默认值是false
+
