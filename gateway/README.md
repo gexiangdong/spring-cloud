@@ -82,4 +82,5 @@ Spring Cloud Gateway的文档有详细说明如何配置使用Spring Cloud Gatew
 
 ## 需要注意
 
-Spring Cloud Gateway的项目中不能有spring-boot-starter-data-rest、spring-boot-starter-web等依赖，无法和REST API、SpringMVC等混用。
+Spring Cloud Gateway的项目中不能有spring-boot-starter-data-rest、spring-boot-starter-web等依赖，在 gateway 的项目中写 controller 也是可以用的。
+
